@@ -143,28 +143,25 @@
       label.textContent = layerIds[i];
 
       url.appendChild(label)
-      // url.href = '#';
-      // url.className = 'active';
-      // url.textContent = id;
 
-      url.onclick = function(clicked) {
-        var currentLayer = this.id;
-        clicked.preventDefault();
-        clicked.stopPropagation();
-
-        var visibility = map.getLayoutProperty(currentLayer, 'visibility');
-
-        if (visibility === 'visible') {
-          map.setLayoutProperty(currentLayer, 'visibility', 'none');
-          this.className = '';
-        } else {
-          this.className = 'active';
-          map.setLayoutProperty(currentLayer, 'visibility', 'visible');
-        }
-      };
-      var layers = document.getElementById('menu');
-      layers.appendChild(url);
-    }
+    //   url.onclick = function(clicked) {
+    //     var currentLayer = this.id;
+    //     clicked.preventDefault();
+    //     clicked.stopPropagation();
+    //
+    //     var visibility = map.getLayoutProperty(currentLayer, 'visibility');
+    //
+    //     if (visibility === 'visible') {
+    //       map.setLayoutProperty(currentLayer, 'visibility', 'none');
+    //       this.className = '';
+    //     } else {
+    //       this.className = 'active';
+    //       map.setLayoutProperty(currentLayer, 'visibility', 'visible');
+    //     }
+    //   };
+    //   var layers = document.getElementById('menu');
+    //   layers.appendChild(url);
+    // }
   </script>
 
 </body>
