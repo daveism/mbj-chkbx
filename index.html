@@ -24,6 +24,11 @@
 
 <body>
   <style>
+      .container {
+        background-color: #3386c0;
+        padding: 10px;
+      }
+
       .listing-group {
           font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
           font-weight: 600;
@@ -158,14 +163,15 @@
     var layerIds = ['NA Asset Index', 'NA Threat Index', 'NA Exposure Index'];
     for (var i = 0; i < layerIds.length; i++) {
       var id = layerIds[i];
-      var url = document.createElement('input');
+      var chckbox = document.createElement('input');
       var containerdiv = document.createElement('div');
-      url.type = "checkbox";
-      url.setAttribute("id", layerIds[i]);
+      containerdiv.setAttribute("class", "container");
+      chckbox.type = "checkbox";
+      chckbox.setAttribute("id", layerIds[i]);
 
       //default layer
       if (id==="NA Exposure Index"){
-        url.checked = true;
+        chckbox.checked = true;
       }
 
       var label  = document.createElement('label');
@@ -173,13 +179,13 @@
       label.textContent = layerIds[i];
 
 
-      url.onclick = function(clicked) {
+      chckbox.onclick = function(clicked) {
         var currentLayer = this.id;
         clicked.preventDefault();
         clicked.stopPropagation();
 
         var visibility = map.getLayoutProperty(currentLayer, 'visibility');
-
+        alert(this.checked)l
         if (visibility === 'visible') {
           map.setLayoutProperty(currentLayer, 'visibility', 'none');
           this.checked = true;
