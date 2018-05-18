@@ -131,37 +131,37 @@
     }); //end of load map
 
 
-    // var layerIds = ['NA Asset Index', 'NA Threat Index', 'NA Exposure Index'];
-    // for (var i = 0; i < layerIds.length; i++) {
-    //   var id = layerIds[i];
-    //   var url = document.createElement('input');
-    //   url.type = "checkbox";
-    //   url.setAttribute("id", layerIds[i]);
-    //
-    //   var label  = document.createElement('label');
-    //   label.setAttribute("for", layerIds[i]);
-    //   label.textContent = layerIds[i];
-    //
-    //   url.appendChild(label)
-    //
-    //   url.onclick = function(clicked) {
-    //     var currentLayer = this.id;
-    //     clicked.preventDefault();
-    //     clicked.stopPropagation();
-    //
-    //     var visibility = map.getLayoutProperty(currentLayer, 'visibility');
-    //
-    //     if (visibility === 'visible') {
-    //       map.setLayoutProperty(currentLayer, 'visibility', 'none');
-    //       this.className = '';
-    //     } else {
-    //       this.className = 'active';
-    //       map.setLayoutProperty(currentLayer, 'visibility', 'visible');
-    //     }
-    //   };
-    //   var layers = document.getElementById('menu');
-    //   layers.appendChild(url);
-    // }
+    var layerIds = ['NA Asset Index', 'NA Threat Index', 'NA Exposure Index'];
+    for (var i = 0; i < layerIds.length; i++) {
+      var id = layerIds[i];
+      var url = document.createElement('input');
+      url.type = "checkbox";
+      url.setAttribute("id", layerIds[i]);
+
+      var label  = document.createElement('label');
+      label.setAttribute("for", layerIds[i]);
+      label.textContent = layerIds[i];
+
+      url.appendChild(label)
+
+      url.onclick = function(clicked) {
+        var currentLayer = this.id;
+        clicked.preventDefault();
+        clicked.stopPropagation();
+
+        var visibility = map.getLayoutProperty(currentLayer, 'visibility');
+
+        if (visibility === 'visible') {
+          map.setLayoutProperty(currentLayer, 'visibility', 'none');
+          this.className = '';
+        } else {
+          this.className = 'active';
+          map.setLayoutProperty(currentLayer, 'visibility', 'visible');
+        }
+      };
+      var layers = document.getElementById('menu');
+      layers.appendChild(url);
+    }
   </script>
 
 </body>
