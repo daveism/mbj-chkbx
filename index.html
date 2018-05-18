@@ -79,6 +79,8 @@
         ],
         'tileSize': 256
       });
+
+
       map.addLayer({
         'id': 'NA Exposure Index',
         'type': 'raster',
@@ -87,7 +89,7 @@
           'visibility': 'visible'
         },
         'paint': {}
-      }, 'aeroway-taxiway');
+      }, 'na-exposure-index');
 
       map.addSource('na-threat-index', {
         'type': 'raster',
@@ -97,6 +99,7 @@
 
         'tileSize': 256
       });
+
       map.addLayer({
         'id': 'NA Threat Index',
         'type': 'raster',
@@ -105,7 +108,7 @@
           'visibility': 'none'
         },
         'paint': {}
-      }, 'aeroway-taxiway'); //new layer
+      }, 'na-threat-index'); //new layer
 
       map.addSource('na-asset-index', {
         'type': 'raster',
@@ -124,17 +127,27 @@
           'visibility': 'none'
         },
         'paint': {}
-      }, 'aeroway-taxiway');
+      }, 'na-asset-index');
     }); //end of load map
 
 
     var layerIds = ['NA Asset Index', 'NA Threat Index', 'NA Exposure Index'];
     for (var i = 0; i < layerIds.length; i++) {
       var id = layerIds[i];
-      var url = document.createElement('a');
-      url.href = '#';
-      url.className = 'active';
-      url.textContent = id;
+      var url = document.createElement('input');
+      url.type = "checkbox";
+      url.setAttribute("id", layerIds[i]);
+
+      var label  = url.createElement('label');
+      label.setAttribute("for", layerIds[i]);
+      label.textContent = layerIds[i];
+
+      // url.href = '#';
+      // url.className = 'active';
+      // url.textContent = id;
+
+      <input type='checkbox' id='scrollZoom' checked='checked'>
+      <label for='scrollZoom'>Scroll zoom</label>
 
       url.onclick = function(clicked) {
         var currentLayer = this.textContent;
