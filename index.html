@@ -142,7 +142,7 @@
       label.setAttribute("for", layerIds[i]);
       label.textContent = layerIds[i];
 
-      url.appendChild(label)
+      // url.appendChild(label)
 
       url.onclick = function(clicked) {
         var currentLayer = this.id;
@@ -161,6 +161,7 @@
       };
       var layers = document.getElementById('menu');
       layers.appendChild(url);
+      layers.appendChild(label);
     }
   </script>
 
