@@ -153,9 +153,9 @@
 
         if (visibility === 'visible') {
           map.setLayoutProperty(currentLayer, 'visibility', 'none');
-          this.className = '';
+          // /this.setAttribute("checked", layerIds[i]);
         } else {
-          this.className = 'active';
+          // this.className = 'active';
           map.setLayoutProperty(currentLayer, 'visibility', 'visible');
         }
       };
