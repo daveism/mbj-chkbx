@@ -171,7 +171,7 @@
 
       //default layer
       if (id==="NA Exposure Index"){
-        chckbox.checked = true;
+        // chckbox.checked = true;
       }
 
       var label  = document.createElement('label');
@@ -188,9 +188,9 @@
 
         if (visibility === 'visible') {
           map.setLayoutProperty(currentLayer, 'visibility', 'none');
-          this.checked = "checked";
+          // this.checked = "checked";
         } else {
-          this.checked = "";
+          // this.checked = "";
           map.setLayoutProperty(currentLayer, 'visibility', 'visible');
         }
       };
