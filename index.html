@@ -52,12 +52,12 @@
       }
 
       /* On mouse-over, add a grey background color */
-      .container:hover input ~ .checkmark {
+      .containerchk:hover input ~ .checkmark {
         background-color: #ccc;
       }
 
       /* When the checkbox is checked, add a blue background */
-      .container input:checked ~ .checkmark {
+      .containerchk input:checked ~ .checkmark {
         background-color: #2196F3;
       }
 
@@ -69,12 +69,12 @@
       }
 
       /* Show the checkmark when checked */
-      .container input:checked ~ .checkmark:after {
+      .containerchk input:checked ~ .checkmark:after {
         display: block;
       }
 
       /* Style the checkmark/indicator */
-      .container .checkmark:after {
+      .containerchk .checkmark:after {
         left: 9px;
         top: 5px;
         width: 5px;
@@ -214,7 +214,7 @@
       spanholder.setAttribute("class", "checkmark");
 
       var label = document.createElement('label');
-      label.setAttribute("class", "container");
+      label.setAttribute("class", "containerchk");
 
       chckbox.type = "checkbox";
       chckbox.setAttribute("id", layerIds[i]);
@@ -225,7 +225,7 @@
       }
 
 
-      label.setAttribute("for", layerIds[i]);
+      // label.setAttribute("for", layerIds[i]);
       label.textContent = layerIds[i];
 
 
