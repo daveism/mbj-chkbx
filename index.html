@@ -24,7 +24,7 @@
 
 <body>
   <style>
-    #menu {
+    /* #menu {
       z-index: 1;
       top: 10px;
       right: 20px;
@@ -55,7 +55,7 @@
 
     #menu a.active:hover {
       background: #5D5D5E;
-    }
+    } */
   </style>
   <nav id="menu"></nav>
   <div id='map'></div>
@@ -138,6 +138,11 @@
       url.type = "checkbox";
       url.setAttribute("id", layerIds[i]);
 
+      //default layer
+      if (id==="NA Exposure Index"){
+        url.checked = true;
+      }
+
       var label  = document.createElement('label');
       label.setAttribute("for", layerIds[i]);
       label.textContent = layerIds[i];
@@ -153,9 +158,9 @@
 
         if (visibility === 'visible') {
           map.setLayoutProperty(currentLayer, 'visibility', 'none');
-          // /this.setAttribute("checked", layerIds[i]);
+          this.checked = true;
         } else {
-          // this.className = 'active';
+          this.checked = false;
           map.setLayoutProperty(currentLayer, 'visibility', 'visible');
         }
       };
