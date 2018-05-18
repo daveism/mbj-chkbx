@@ -138,10 +138,11 @@
       url.type = "checkbox";
       url.setAttribute("id", layerIds[i]);
 
-      var label  = url.createElement('label');
+      var label  = document.createElement('label');
       label.setAttribute("for", layerIds[i]);
       label.textContent = layerIds[i];
 
+      url.appendChild(label)
       // url.href = '#';
       // url.className = 'active';
       // url.textContent = id;
