@@ -188,9 +188,9 @@
 
         if (visibility === 'visible') {
           map.setLayoutProperty(currentLayer, 'visibility', 'none');
-          checkbox.checked = "checked";
+          this.checked = "checked";
         } else {
-          checkbox.checked = "";
+          this.checked = "";
           map.setLayoutProperty(currentLayer, 'visibility', 'visible');
         }
       };
