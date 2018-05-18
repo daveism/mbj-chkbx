@@ -30,7 +30,7 @@
       } */
 
       .listing-group {
-          font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+          font: 12px/14px 'Helvetica Neue', Arial, Helvetica, sans-serif;
           font-weight: 600;
           position: absolute;
           top: 10px;
@@ -209,8 +209,8 @@
 
       chckbox.onclick = function(clicked) {
         var currentLayer = this.id;
-        clicked.preventDefault();
-        clicked.stopPropagation();
+        // clicked.preventDefault();
+        // clicked.stopPropagation();
 
         var visibility = map.getLayoutProperty(currentLayer, 'visibility');
 
