@@ -24,10 +24,6 @@
 
 <body>
   <style>
-      /* .container {
-        background-color: #3386c0;
-        padding: 10px;
-      } */
 
       .listing-group {
           font: 12px/14px 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -50,7 +46,7 @@
         padding-left: 35px;
         margin-bottom: 12px;
         cursor: pointer;
-        font-size: 22px;
+        font-size: 14px;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -201,24 +197,16 @@
       if (id==="NA Exposure Index"){
         chckbox.checked = true;
       }
-
-
-      // label.setAttribute("for", layerIds[i]);
       label.textContent = layerIds[i];
-
 
       chckbox.onclick = function(clicked) {
         var currentLayer = this.id;
-        // clicked.preventDefault();
-        // clicked.stopPropagation();
 
         var visibility = map.getLayoutProperty(currentLayer, 'visibility');
 
         if (visibility === 'visible') {
           map.setLayoutProperty(currentLayer, 'visibility', 'none');
-          // this.checked = "checked";
         } else {
-          // this.checked = "";
           map.setLayoutProperty(currentLayer, 'visibility', 'visible');
         }
       };
