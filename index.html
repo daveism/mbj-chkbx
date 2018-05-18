@@ -53,6 +53,10 @@
           display: block;
       }
 
+      .listing-group label {
+          background-color: #3386c0;
+      }
+
       .listing-group input[type=checkbox] + label {
           background-color: #3386c0;
           /* display: block; */
@@ -155,6 +159,7 @@
     for (var i = 0; i < layerIds.length; i++) {
       var id = layerIds[i];
       var url = document.createElement('input');
+      var containerdiv = document.createElement('div');
       url.type = "checkbox";
       url.setAttribute("id", layerIds[i]);
 
@@ -167,7 +172,6 @@
       label.setAttribute("for", layerIds[i]);
       label.textContent = layerIds[i];
 
-      // url.appendChild(label)
 
       url.onclick = function(clicked) {
         var currentLayer = this.id;
@@ -178,15 +182,17 @@
 
         if (visibility === 'visible') {
           map.setLayoutProperty(currentLayer, 'visibility', 'none');
-          // this.checked = true;
+          this.checked = true;
         } else {
-          // this.checked = false;
+          this.checked = false;
           map.setLayoutProperty(currentLayer, 'visibility', 'visible');
         }
       };
       var layers = document.getElementById('menu');
-      layers.appendChild(url);
-      layers.appendChild(label);
+      containerdiv.appendChild(url);
+      containerdiv.appendChild(label);
+      layers.appendChild(layers);
+
     }
   </script>
 
