@@ -188,9 +188,9 @@
         alert(this.checked);
         if (visibility === 'visible') {
           map.setLayoutProperty(currentLayer, 'visibility', 'none');
-          this.checked = true;
+          // this.checked = false;
         } else {
-          this.checked = false;
+          // this.checked = true;
           map.setLayoutProperty(currentLayer, 'visibility', 'visible');
         }
       };
